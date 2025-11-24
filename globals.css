@@ -1,8 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import "tailwindcss";
 
 :root {
-  /* Fethiye.ai Premium Palette */
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --turquoise: #40E0D0;
+  --deep-blue: #006994;
+}
+
+body {
+  font-family: var(--font-lato), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Fethiye.ai Premium Palette */
+:root {
   --turquoise: #40E0D0;
   --turquoise-light: #7FFFD4;
   --turquoise-dark: #20B2AA;
@@ -16,26 +35,6 @@
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-highlight: rgba(255, 255, 255, 0.1);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-}
-
-@theme inline {
-  --color-turquoise: var(--turquoise);
-  --color-turquoise-light: var(--turquoise-light);
-  --color-turquoise-dark: var(--turquoise-dark);
-
-  --color-deep-blue: var(--deep-blue);
-  --color-deep-blue-light: var(--deep-blue-light);
-
-  --color-off-white: var(--off-white);
-
-  --font-sans: 'Inter', sans-serif;
-}
-
-body {
-  background-color: var(--off-white);
-  color: var(--deep-blue);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
 }
 
 /* Advanced Glassmorphism Utilities */
@@ -68,7 +67,6 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -109,16 +107,14 @@ body {
   background: var(--turquoise);
 }
 
-/* Animations */
+/* Ken Burns Animation */
 @keyframes kenBurns {
   0% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.1);
   }
-
   100% {
     transform: scale(1);
   }
@@ -128,13 +124,11 @@ body {
   animation: kenBurns 20s ease-in-out infinite alternate;
 }
 
+/* Blink Animation */
 @keyframes blink {
-
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
   }
-
   50% {
     opacity: 0;
   }
